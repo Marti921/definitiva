@@ -1,28 +1,73 @@
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Scanner;
-public class test{
-	
 
-		public static void main(String[] args) {
+public class Test{
 
-			Scanner input = new Scanner(System.in);
-			System.out.println("Inserisci il nome del docente: ");
-			String nome = input.next();
-			System.out.println("Inserisci il cognome del docente: ");
-			String livello = input.next();
-			System.out.println("Inserisci la matricola del docente: ");
-			int stipendio = input.nextInt();
-	
-			private String nome;
-			private String cognome;
-			private Integer matricola;
+    	    @SuppressWarnings("null")
+			public static void main(String[] args) {
+			int i=0;
+			List <String> nome = new ArrayList<>();
+			List <String> cognome = new ArrayList<>();
+			List <Integer> matricola = new ArrayList<>();
+			String n;
+			String c;
+			Integer m;
+			Docente mioDocente [] = {null, null, null};
 			
-			docente mioDocente = new docente(nome, cognome, matricola);
-			mioDocente.stampaDocente();
+			while (i<3) {
+				Scanner input = new Scanner(System.in);
+				System.out.println("Inserisci il nome del docente: ");
+				n = input.next();
+				nome.add(n);
+				System.out.println("Inserisci il cognome del docente: ");
+				c = input.next();
+				cognome.add(c);
+				System.out.println("Inserisci la matricola del docente: ");
+				m = input.nextInt();
+				matricola.add(m);
+				mioDocente[i] = new Docente(n, c, m);
+				i++;
+				}
 			
-	
-	public void assegnaValoriAgliAttributi(String nomeDocente, String cognomeDocente, int matricolaDocente) {
-			this.nome = nomeDocente;
-			this.cognome = cognomeDocente;
-			this.matricola= matricolaDocente;
-	}
+			i=0;
+			while (i<3) {
+				mioDocente[i].stampaDocente();
+			i++;
+			}
+			
+			
+    	    
+			int j=0;
+			List <String> dnome = new ArrayList<>();
+			List <String> dcognome = new ArrayList<>();
+			String nd;
+			String cd;
+			Discente mioDiscente [] = {null, null};
+			
+			while (j<3) {
+				Scanner input = new Scanner(System.in);
+				System.out.println("Inserisci il nome del discente: ");
+				nd = input.next();
+				dnome.add(nd);
+				System.out.println("Inserisci il cognome del discente: ");
+				cd = input.next();
+				dcognome.add(cd);
+				mioDiscente[j] = new Discente(nd, cd);
+				j++;
+				}
+			
+			j=0;
+			while (j<3) {
+				mioDiscente[j].stampaDiscente();
+			j++;
+			}
+			
+		}
 }
+    	    
+    	    
+    	    
+    	    
+    	    
+    
